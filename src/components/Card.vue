@@ -1,29 +1,37 @@
 <template>
-  <div class="card">
+  <div class="card" style="width: 25rem; overflow: hidden">
     <Card>
-        <Fieldset legend="Header">
-          <p class="m-0">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-          </p>
+      <template #header>
+        <Image
+          :src="project.image"
+          alt="Project Image"
+          style="width: 100%; height: auto; display: block"
+          preview
+        />
+      </template>
+
+      <template #content>
+        <Fieldset
+          :legend="project.name"
+          :pt="{ legend: { style: 'margin-left: 0; margin-right: auto;' } }"
+        >
+          <p class="m-0">{{ project.description }}</p>
         </Fieldset>
-        TEST TEST TEST
+      </template>
     </Card>
-        TEST TEST TEST
-        TEST TEST TEST
-        TEST TEST TEST
-
   </div>
-
 </template>
 
-<script>
-import Card from 'primevue/card';
-import Fieldset from 'primevue/fieldset';
+<script setup lang="ts">
+import Card from "primevue/card";
+import Fieldset from "primevue/fieldset";
+import Image from "primevue/image";
 
-export default {
-  components: {
-    Card
-  }
+interface CardProjectData {
+  name: string;
+  description: string;
+  image: string;
 }
+
+const props = defineProps<{ project: CardProjectData }>();
 </script>
