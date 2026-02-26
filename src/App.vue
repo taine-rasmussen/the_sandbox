@@ -5,7 +5,7 @@ import Card from "./components/Card.vue";
 const cardProjectData = {
   name: "Project Name",
   description: "This is a description of the project.",
-  image: "https://via.placeholder.com/400x300",
+  image: "https://placehold.co/300x200",
 };
 </script>
 
