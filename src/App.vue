@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import Button from "primevue/button";
 import Card from "./components/Card.vue";
+import ToolBar from "./components/ToolBar.vue";
 
 const cardProjectData = {
   name: "Project Name",
@@ -11,6 +12,7 @@ const cardProjectData = {
 
 <template>
   <div>
+    <ToolBar />
     <h1>the_sandbox</h1>
     <Button label="Click me" />
     <Card :project="cardProjectData" />
