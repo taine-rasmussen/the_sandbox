@@ -24,6 +24,8 @@ a:hover {
 
 body {
   margin: 0;
+  display: flex;
+}
 
 h1 {
   font-size: 3.2em;
